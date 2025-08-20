@@ -11,7 +11,7 @@ function closeMenu(){
 }
 window.addEventListener('scroll', ()=>{
 if(scrollY > 50){
-  navBar.classList.add('bg-white', 'bg-opacity-50', 'backdrop-blur-lg',
+ navBar.classList.add('bg-white', 'bg-opacity-50', 'backdrop-blur-lg',
   'shadow-sm' , 'dark:bg-darkTheme','dark:shadow-white/20');
   navlinks.classList.remove('bg-white', 'shadow-sm', 'bg-opacity-50', 'dark:border', 'dark:border-white/50','dark:bg-transparent');
  }else{
@@ -38,27 +38,13 @@ function toggleTheme(){
 
 }
 
-// Resume modal logic
-const resumeBtn = document.getElementById("resumeBtn");
-const resumeModal = document.getElementById("resumeModal");
-const closeResume = document.getElementById("closeResume");
+// Resume Modal Functions
+function openModal() {
+  document.getElementById("resumeModal").classList.remove("hidden");
+}
 
-if (resumeBtn && resumeModal && closeResume) {
-  resumeBtn.addEventListener("click", () => {
-    resumeModal.classList.remove("hidden");
-    resumeModal.classList.add("flex");
-  });
-
-  closeResume.addEventListener("click", () => {
-    resumeModal.classList.add("hidden");
-    resumeModal.classList.remove("flex");
-  });
-
-  // Close when clicking outside modal content
-  resumeModal.addEventListener("click", (e) => {
-    if (e.target === resumeModal) {
-      resumeModal.classList.add("hidden");
-      resumeModal.classList.remove("flex");
-    }
-  });
+function closeModal(event) {
+  if (!event || event.target.id === "resumeModal") {
+    document.getElementById("resumeModal").classList.add("hidden");
+  }
 }

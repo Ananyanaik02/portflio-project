@@ -7,10 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./tailwind.config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" 
-    rel="stylesheet">
-   </head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" 
+rel="stylesheet">
+ </head>
   <body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
     <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[80%] 
     dark:hidden">
@@ -79,10 +79,16 @@
           class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-
           [#da7d20] text-white flex items-center gap-2 dark:border-transparent">contact me <img src="../Images/arrow.png" 
         alt="" class="w-5"></a>
-        <button id="resumeBtn"
-          class="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700">
-          View Resume
-        </button>
+        <a onclick="openModal()" 
+   class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white text-black cursor-pointer">
+  my resume <img src="./Images/Sresumee.png" alt="" class="w-4">
+</a>
+
+
+
+
+
+
         </div>
     </div>
     <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
@@ -187,9 +193,9 @@
     <!-- Project 1 -->
     <div class="aspect-square bg-[url('./Images/portfoliowork.jpeg')] bg-no-repeat
         bg-cover bg-center rounded-lg relative cursor-pointer group">
-      <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2
+  <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2
           -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-        <div>
+    <div>
           <h2 class="font-semibold">Frontend project</h2>
           <p class="text-sm text-gray-700">Portfolio Design</p>
         </div>
@@ -274,29 +280,21 @@
     </div>
   </div>
 
-  
+ 
   <script src="./script.js"></script>
 
 <!-- Resume Modal -->
-<div id="resumeModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-  <div class="bg-white dark:bg-gray-900 rounded-xl shadow-xl p-6 max-w-3xl w-11/12 relative">
-    
-    <!-- Close button -->
-    <button id="closeResume" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-2xl">
-      &times;
-    </button>
-
-    <!-- Resume iframe -->
-    <iframe src="./Images/4CB22CS010_Ananya_Naik.pdf" class="w-full h-[500px] rounded-md"></iframe>
-
-    <!-- Download button -->
-    <div class="mt-4 text-center">
-      <a href="./Images/4CB22CS010_Ananya_Naik.pdf" download
-          class="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
-        Download Resume
-      </a>
-    </div>
-  </div>
+<div id="resumeModal" 
+     class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"
+     onclick="closeModal(event)">
+  <span class="absolute top-6 right-10 text-white text-3xl cursor-pointer">&times;</span>
+  <img id="resumeImage" src="./Images/Sresumee.png" 
+       class="max-h-[90%] max-w-[90%] rounded-lg shadow-lg" onclick="event.stopPropagation()">
 </div>
+
+
+
+
+
 </body>
 </html>
