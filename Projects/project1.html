@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Project | My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css"> <!-- keep same css -->
+</head>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
+
+  <!-- 🔹 Navbar (copy from your index.html) -->
+  <header class="w-full px-[12%] py-5 flex justify-between items-center shadow-md">
+    <h1 class="text-2xl font-bold">My Portfolio</h1>
+    <nav>
+      <a href="../index.html" class="hover:text-lime-500">← Back</a>
+    </nav>
+  </header>
+
+  <!-- 🔹 Project Content -->
+  <section class="w-full px-[12%] py-16">
+    <h2 class="text-4xl font-bold mb-6"> Portfolio Design</h2>
+    <p class="text-lg mb-6">
+      This is a Portfolio project with a responsive design.
+      Tools used (HTML, JS, Tailwind CSS).
+    </p>
+
+    <!-- Project Image -->
+     <div class="flex justify-center mb-8">
+      <img src="../Images/portfoliowork.jpeg" alt="Main Project Preview" class="rounded-lg shadow-lg max-w-md w-full mx-auto">
+    </div>
+
+    <!-- Multiple Screenshots -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <img src="../Images/work1.png" alt="Screenshot 1" class="rounded-lg shadow-lg w-full h-auto object-cover">
+      <img src="../Images/work22.png" alt="Screenshot 2" class="rounded-lg shadow-lg w-full h-auto object-cover">
+      <img src="../Images/work33.png"  alt="Screenshot 3" class="rounded-lg shadow-lg w-full h-auto object-cover">
+      <img src="../Images/work44.png" alt="Screenshot 4" class="rounded-lg shadow-lg w-full h-auto object-cover">
+      <img src="../Images/work55.png" alt="Screenshot 5" class="rounded-lg shadow-lg w-full h-auto object-cover">
+    </div>
+    </div>
+  </section>
+
+   
+
+  <!-- 🔹 Footer -->
+  <footer class="w-full text-center py-6 mt-10 border-t dark:border-gray-700">
+    <p class="text-sm">© 2025 My Portfolio. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
