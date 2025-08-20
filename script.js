@@ -39,17 +39,3 @@ function toggleTheme(){
 }
 
 
-// Resume Modal Functions
-function openModal() {
-  document.getElementById("resumeModal").classList.remove("hidden");
-}
-
-function closeModal(event) {
-  // If the event is from the background click, close the modal.
-  if (event && event.target.id === "resumeModal") {
-    document.getElementById("resumeModal").classList.add("hidden");
-    // This is the new part for the 'X' button. If the event is not present, it means the 'X' button was clicked.
-  } else if (!event) {
-    document.getElementById("resumeModal").classList.add("hidden");
-  }
-}
