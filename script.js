@@ -38,31 +38,32 @@ function toggleTheme(){
 }
 
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const resumeModal = document.getElementById("resumeModal");
-  const resumeCloseBtn = document.getElementById("resumeCloseBtn");
-  const resumeImage = document.getElementById("resumeImage");
+const resumeModal = document.getElementById("resumeModal");
+const resumeCloseBtn = document.getElementById("resumeCloseBtn");
+const resumeImage = document.getElementById("resumeImage");
 
-  function openModal() {
-    resumeModal.classList.remove("hidden");
+// Function to open modal
+function openModal() {
+  resumeModal.classList.remove("hidden");
+}
+
+// Function to close modal
+function closeModal() {
+  resumeModal.classList.add("hidden");
+}
+
+// Close button click
+resumeCloseBtn.addEventListener("click", closeModal);
+
+// Background click
+resumeModal.addEventListener("click", (event) => {
+  if(event.target === resumeModal){
+    closeModal();
   }
-
-  function closeModal(event) {
-    if (!event || event.target === resumeModal) {
-      resumeModal.classList.add("hidden");
-    }
-  }
-
-  // Close button
-  resumeCloseBtn.addEventListener("click", closeModal);
-
-  // Background click
-  resumeModal.addEventListener("click", closeModal);
-
-  // Prevent image click from closing modal
-  resumeImage.addEventListener("click", (event) => event.stopPropagation());
-
-  // Make openModal function global
-  window.openModal = openModal;
-  window.closeModal = closeModal;
 });
+
+// Prevent image click from closing modal
+resumeImage.addEventListener("click", (event) => event.stopPropagation());
+
+// Make openModal global
+window.openModal = openModal;
