@@ -55,9 +55,9 @@ function closeModal() {
 // Close button click
 resumeCloseBtn.addEventListener("click", closeModal);
 
-// Background click
+// Background click (click outside the image)
 resumeModal.addEventListener("click", (event) => {
-  if(event.target === resumeModal){
+  if (event.target === resumeModal) {
     closeModal();
   }
 });
@@ -65,5 +65,5 @@ resumeModal.addEventListener("click", (event) => {
 // Prevent image click from closing modal
 resumeImage.addEventListener("click", (event) => event.stopPropagation());
 
-// Make openModal global
+// Make openModal global for HTML onclick
 window.openModal = openModal;
