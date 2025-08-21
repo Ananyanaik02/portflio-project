@@ -38,6 +38,22 @@ function toggleTheme(){
 }
 
 }
+function openModal() {
+  document.getElementById("resumeModal").classList.remove("hidden");
+}
+
+function closeModal(event) {
+  // Close if clicked on modal background
+  if (!event || event.target.id === "resumeModal") {
+    document.getElementById("resumeModal").classList.add("hidden");
+  }
+}
+
+// Close button click
+document.getElementById("resumeCloseBtn").addEventListener("click", () => {
+  document.getElementById("resumeModal").classList.add("hidden");
+});
+
 
 
 
