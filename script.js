@@ -38,22 +38,31 @@ function toggleTheme(){
 }
 
 }
-function openModal() {
-  document.getElementById("resumeModal").classList.remove("hidden");
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const resumeModal = document.getElementById("resumeModal");
+  const resumeCloseBtn = document.getElementById("resumeCloseBtn");
+  const resumeImage = document.getElementById("resumeImage");
 
-function closeModal(event) {
-  // Close if clicked on modal background
-  if (!event || event.target.id === "resumeModal") {
-    document.getElementById("resumeModal").classList.add("hidden");
+  function openModal() {
+    resumeModal.classList.remove("hidden");
   }
-}
 
-// Close button click
-document.getElementById("resumeCloseBtn").addEventListener("click", () => {
-  document.getElementById("resumeModal").classList.add("hidden");
+  function closeModal(event) {
+    if (!event || event.target === resumeModal) {
+      resumeModal.classList.add("hidden");
+    }
+  }
+
+  // Close button
+  resumeCloseBtn.addEventListener("click", closeModal);
+
+  // Background click
+  resumeModal.addEventListener("click", closeModal);
+
+  // Prevent image click from closing modal
+  resumeImage.addEventListener("click", (event) => event.stopPropagation());
+
+  // Make openModal function global
+  window.openModal = openModal;
+  window.closeModal = closeModal;
 });
-
-
-
-
