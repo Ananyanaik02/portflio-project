@@ -1,72 +1,89 @@
-
+// ==========================
+// SIDE MENU
+// ==========================
 const sideMenu = document.querySelector('#sideMenu');
 const navBar = document.querySelector("nav");
 const navlinks = document.querySelector("nav ul");
 
-
-function openMenu(){
+function openMenu() {
   sideMenu.style.transform = 'translateX(-16rem)';
 }
-function closeMenu(){
+
+function closeMenu() {
   sideMenu.style.transform = 'translateX(16rem)';
 }
-window.addEventListener('scroll', ()=>{
-if(scrollY > 50){
- navBar.classList.add('bg-white', 'bg-opacity-50', 'backdrop-blur-lg',
-  'shadow-sm' , 'dark:bg-darkTheme','dark:shadow-white/20');
-  navlinks.classList.remove('bg-white', 'shadow-sm', 'bg-opacity-50', 'dark:border', 'dark:border-white/50','dark:bg-transparent');
- }else{
-  navBar.classList.remove('bg-white', 'bg-opacity-50', 'backdrop-blur-lg',
-  'shadow-sm' , 'dark:bg-darkTheme','dark:shadow-white/20');
-    navlinks.classList.add('bg-white', 'shadow-sm', 'bg-opacity-50', 'dark:border', 'dark:border-white/50','dark:bg-transparent');
- }
-})
- 
 
- if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.
-matchMedia('(prefers-color-scheme: dark)').matches)) {
-document.documentElement.classList.add('dark')
+// ==========================
+// NAVBAR SCROLL EFFECT
+// ==========================
+window.addEventListener('scroll', () => {
+  if (scrollY > 50) {
+    navBar.classList.add(
+      'bg-white', 'bg-opacity-50', 'backdrop-blur-lg',
+      'shadow-sm', 'dark:bg-darkTheme', 'dark:shadow-white/20'
+    );
+    navlinks.classList.remove(
+      'bg-white', 'shadow-sm', 'bg-opacity-50',
+      'dark:border', 'dark:border-white/50', 'dark:bg-transparent'
+    );
+  } else {
+    navBar.classList.remove(
+      'bg-white', 'bg-opacity-50', 'backdrop-blur-lg',
+      'shadow-sm', 'dark:bg-darkTheme', 'dark:shadow-white/20'
+    );
+    navlinks.classList.add(
+      'bg-white', 'shadow-sm', 'bg-opacity-50',
+      'dark:border', 'dark:border-white/50', 'dark:bg-transparent'
+    );
+  }
+});
+
+// ==========================
+// DARK MODE
+// ==========================
+if (
+  localStorage.theme === 'dark' ||
+  (!('theme' in localStorage) &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches)
+) {
+  document.documentElement.classList.add('dark');
 } else {
-  document.documentElement.classList.remove('dark')
-}
-function toggleTheme(){
-  document.documentElement.classList.toggle('dark');
-  if(document.documentElement.classList.contains('dark')){
-    localStorage.theme = 'dark';
-}else{
-  localStorage.theme = 'light';
+  document.documentElement.classList.remove('dark');
 }
 
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark');
+  if (document.documentElement.classList.contains('dark')) {
+    localStorage.theme = 'dark';
+  } else {
+    localStorage.theme = 'light';
+  }
 }
-// Modal elements
+
+// ==========================
+// RESUME MODAL
+// ==========================
 const resumeModal = document.getElementById("resumeModal");
 const resumeCloseBtn = document.getElementById("resumeCloseBtn");
 const resumeImage = document.getElementById("resumeImage");
 
-// Open modal
-window.openResumeModal = function() {
+// Open modal (global for onclick)
+window.openResumeModal = function () {
   resumeModal.classList.remove("hidden");
 };
 
-// Close modal function
-function closeResumeModal() {
+// Close modal
+function closeModal() {
   resumeModal.classList.add("hidden");
 }
 
-// Close modal when clicking X
-resumeCloseBtn.addEventListener("click", closeResumeModal);
+// Close button click
+resumeCloseBtn.addEventListener("click", closeModal);
 
-// Close modal when clicking outside the image
+// Background click closes modal
 resumeModal.addEventListener("click", (event) => {
-  if(event.target === resumeModal){
-    closeResumeModal();
-  }
+  if (event.target === resumeModal) closeModal();
 });
 
-// Prevent closing when clicking the image
+// Prevent image click from closing modal
 resumeImage.addEventListener("click", (event) => event.stopPropagation());
-console.log("Script loaded ✅");
-// Open modal
-window.openResumeModal = function() {
-  document.getElementById("resumeModal").classList.remove("hidden");
-};
