@@ -65,3 +65,9 @@ resumeModal.addEventListener("click", (event) => {
 
 // Prevent closing when clicking the image
 resumeImage.addEventListener("click", (event) => event.stopPropagation());
+console.log("Script loaded ✅");
+
+window.openResumeModal = function() {
+  console.log("Resume modal open function triggered ✅");
+  document.getElementById("resumeModal").classList.remove("hidden");
+};
