@@ -38,32 +38,30 @@ function toggleTheme(){
 }
 
 }
+// Modal elements
 const resumeModal = document.getElementById("resumeModal");
 const resumeCloseBtn = document.getElementById("resumeCloseBtn");
 const resumeImage = document.getElementById("resumeImage");
 
-// Function to open modal
-function openModal() {
+// Open modal
+window.openResumeModal = function() {
   resumeModal.classList.remove("hidden");
-}
+};
 
-// Function to close modal
-function closeModal() {
+// Close modal function
+function closeResumeModal() {
   resumeModal.classList.add("hidden");
 }
 
-// Close button click
-resumeCloseBtn.addEventListener("click", closeModal);
+// Close modal when clicking X
+resumeCloseBtn.addEventListener("click", closeResumeModal);
 
-// Background click (click outside the image)
+// Close modal when clicking outside the image
 resumeModal.addEventListener("click", (event) => {
-  if (event.target === resumeModal) {
-    closeModal();
+  if(event.target === resumeModal){
+    closeResumeModal();
   }
 });
 
-// Prevent image click from closing modal
+// Prevent closing when clicking the image
 resumeImage.addEventListener("click", (event) => event.stopPropagation());
-
-// Make openModal global for HTML onclick
-window.openModal = openModal;
