@@ -60,29 +60,3 @@ function toggleTheme() {
   }
 }
 
-const resumeModal = document.getElementById("resumeModal");
-const resumeCloseBtn = document.getElementById("resumeCloseBtn");
-const resumeImage = document.getElementById("resumeImage");
-
-// Function to open modal
-function openResumeModal() {
-  resumeModal.classList.remove("hidden");
-}
-
-// Function to close modal
-function closeResumeModal() {
-  resumeModal.classList.add("hidden");
-}
-
-// Close button click
-resumeCloseBtn.addEventListener("click", closeResumeModal);
-
-// Background click (close modal)
-resumeModal.addEventListener("click", (event) => {
-  if (event.target === resumeModal) {
-    closeResumeModal();
-  }
-});
-
-// Prevent image click from closing modal
-resumeImage.addEventListener("click", (event) => event.stopPropagation());
