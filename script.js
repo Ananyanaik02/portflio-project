@@ -60,29 +60,28 @@ function toggleTheme() {
   }
 }
 
-// ==========================
-// RESUME MODAL
-// ==========================
 const resumeModal = document.getElementById("resumeModal");
 const resumeCloseBtn = document.getElementById("resumeCloseBtn");
 const resumeImage = document.getElementById("resumeImage");
 
-// Open modal (global for onclick)
-window.openResumeModal = function () {
+// Function to open modal
+function openResumeModal() {
   resumeModal.classList.remove("hidden");
-};
+}
 
-// Close modal
-function closeModal() {
+// Function to close modal
+function closeResumeModal() {
   resumeModal.classList.add("hidden");
 }
 
 // Close button click
-resumeCloseBtn.addEventListener("click", closeModal);
+resumeCloseBtn.addEventListener("click", closeResumeModal);
 
-// Background click closes modal
+// Background click (close modal)
 resumeModal.addEventListener("click", (event) => {
-  if (event.target === resumeModal) closeModal();
+  if (event.target === resumeModal) {
+    closeResumeModal();
+  }
 });
 
 // Prevent image click from closing modal
