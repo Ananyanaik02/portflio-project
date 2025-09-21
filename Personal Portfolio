@@ -1,0 +1,39 @@
+# 🌐 My Portfolio Website
+
+This is a personal portfolio website designed to showcase **my projects, Qualification , about me**.  
+It acts as a digital resume where recruiters and collaborators can learn more about me.
+
+---
+
+## 📂 Project Structure
+portfolio-project/
+│── index.html       # Main HTML file  
+│── tailwind css     # Styling  
+│── script.js        # JavaScript  
+│── images/          # Project images  
+│── README.md        # Documentation  
+
+---
+
+## 🚀 Features
+- Responsive design (works on all devices)
+- Smooth scrolling and animations
+- Projects showcase with live links
+- Contact form for easy communication
+
+---
+
+## 🛠️ Tech Stack
+- HTML
+- Tailwind CSS
+- JavaScript 
+
+---
+
+## 🚀 Deployment
+This portfolio is deployed using **Netlify**.  
+Netlify automatically builds and deploys the site whenever I push updates to GitHub.
+---
+
+## ⚡ How to View
+- Visit the live website 👉 [My Portfolio](https://ananya-naik-portfolio.netlify.app/)
